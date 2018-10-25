@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 '''
-Free to use, all credits belong to me, Zero Cool.
-Do not sell or rent it!
-© 2018 Hello World
+Free to use, all credits belong to me, Zero Cool. ←檔案所有者Zero Cool
+Do not sell or rent it! ←此檔案僅供免費使用請勿作為販賣用途
+© 2018 Hello World ←版權所有者Hello World
 '''
 from important import *
 
@@ -22,7 +22,7 @@ args = parser.parse_args()
 # Login Client
 listAppType = ['DESKTOPWIN', 'DESKTOPMAC', 'IOSIPAD', 'CHROMEOS']
 try:
-    print ('##----- LOGIN CLIENT -----##')
+    print ('##----- 登入客戶端 -----##')
     line = None
     if args.apptype:
         tokenPath = Path('authToken.txt')
@@ -79,9 +79,9 @@ except Exception as error:
 if line:
     print ('++ Auth Token : %s' % line.authToken)
     print ('++ Timeline Token : %s' % line.tl.channelAccessToken)
-    print ('##----- LOGIN CLIENT (Success) -----##')
+    print ('##----- 登入成功ʕ•ᴥ•ʔ -----##')
 else:
-    sys.exit('##----- LOGIN CLIENT (Failed) -----##')
+    sys.exit('##----- 登入失敗ಠ_ಠ -----##')
 
 myMid = line.profile.mid
 programStart = time.time()
@@ -105,7 +105,7 @@ coverId = line.profileDetail['result']['objectId']
 settings['myProfile']['coverId'] = coverId
 
 def restartProgram():
-    print ('##----- PROGRAM RESTARTED -----##')
+    print ('##----- 正在重啟 -----##')
     python = sys.executable
     os.execl(python, python, *sys.argv)
 
@@ -187,8 +187,8 @@ def parsingRes(res):
 def mentionMembers(to, mids=[]):
     if myMid in mids: mids.remove(myMid)
     parsed_len = len(mids)//20+1
-    result = '╭───「 Mention Members 」\n'
-    mention = '@aditmadzs\n'
+    result = '╭───「 這些都是傻B 」\n'
+    mention = '@Yinmo\n'
     no = 0
     for point in range(parsed_len):
         mentionees = []
@@ -199,7 +199,7 @@ def mentionMembers(to, mids=[]):
             elen = len(result) + 3
             mentionees.append({'S': str(slen), 'E': str(elen - 4), 'M': mid})
             if mid == mids[-1]:
-                result += '╰───「 Aditmadzs 」\n'
+                result += '╰───「 Yinmo 」\n'
         if result:
             if result.endswith('\n'): result = result[:-1]
             line.sendMessage(to, result, {'MENTION': json.dumps({'MENTIONEES': mentionees})}, 0)
@@ -237,21 +237,21 @@ def restoreProfile():
 
 def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
     if cmd == 'logoutbot':
-        line.sendMessage(to, 'Bot will logged out')
+        line.sendMessage(to, 'Bot will log out')
         sys.exit('##----- PROGRAM STOPPED -----##')
-    elif cmd == 'logoutdevicee':
+    elif cmd == 'logoutdevice':
         line.logout()
-        sys.exit('##----- CLIENT LOGOUT -----##')
+        sys.exit('##----- 已登出裝置 -----##')
     elif cmd == 'restart':
-        line.sendMessage(to, 'Bot will restarting')
+        line.sendMessage(to, '正在重啟')
         restartProgram()
     elif cmd == 'help':
         line.sendReplyMessage(msg_id, to, help())
     elif cmd == 'speed':
         start = time.time()
-        line.sendMessage(to, 'Checking speed')
+        line.sendMessage(to, '指令延遲大約...')
         elapse = time.time() - start
-        line.sendMessage(to, 'Speed sending message took %s seconds' % str(elapse))
+        line.sendMessage(to, ' %s 秒' % str(elapse))
     elif cmd == 'me':
         line.sendContact(to, myMid)
     elif cmd == 'runtime':
