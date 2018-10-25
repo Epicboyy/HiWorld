@@ -4,7 +4,6 @@
 
 ----
 
-# JANGAN LUPA ADD [ADITMADZS BOT](line.me/ti/p/~botaditmadzs)
 
 ## Termux
 
