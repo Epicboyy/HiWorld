@@ -256,32 +256,32 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         line.sendContact(to, myMid)
     elif cmd == 'runtime':
         runtime = time.time() - programStart
-        line.sendMessage(to, 'Bot already running on ' + format_timespan(runtime))
+        line.sendMessage(to, '已運行 ' + format_timespan(runtime))
     elif cmd == 'author':
-        line.sendMessage(to, 'Author is linepy')
+        line.sendMessage(to, '作者尹莫')
     elif cmd == 'about':
-        res = '╭───「 About 」'
-        res += '\n├ Type : Selfbot Hello World'
-        res += '\n├ Version : 3.0.8'
-        res += '\n├ Library : linepy (Python)'
-        res += '\n├ Creator : Zero Cool'
-        res += '\n╰───「 Aditmadzs 」'
+        res = '╭───「 關於本垢 」'
+        res += '\n├ 類型 : 半垢'
+        res += '\n├ 版本 : 最新'
+        res += '\n├ 語言 : linepy (Python)'
+        res += '\n├ 作者 : 尹莫'
+        res += '\n╰───「 就醬😅 」'
         line.sendMessage(to, res)
     elif cmd == 'status':
-        res = '╭───「 Status 」'
-        res += '\n├ Auto Add : ' + bool_dict[settings['autoAdd']['status']][1]
-        res += '\n├ Auto Join : ' + bool_dict[settings['autoJoin']['status']][1]
-        res += '\n├ Auto Respond : ' + bool_dict[settings['autoRespond']['status']][1]
-        res += '\n├ Auto Respond Mention : ' + bool_dict[settings['autoRespondMention']['status']][1]
-        res += '\n├ Auto Read : ' + bool_dict[settings['autoRead']][1]
-        res += '\n├ Setting Key : ' + bool_dict[settings['setKey']['status']][1]
-        res += '\n├ Mimic : ' + bool_dict[settings['mimic']['status']][1]
-        res += '\n├ Greetings Join : ' + bool_dict[settings['greet']['join']['status']][1]
-        res += '\n├ Greetings Leave : ' + bool_dict[settings['greet']['leave']['status']][1]
-        res += '\n├ Check Contact : ' + bool_dict[settings['checkContact']][1]
-        res += '\n├ Check Post : ' + bool_dict[settings['checkPost']][1]
-        res += '\n├ Check Sticker : ' + bool_dict[settings['checkSticker']][1]
-        res += '\n╰───「 Hello World 」'
+        res = '╭───「 本機狀態 」'
+        res += '\n├ 自動加友 : ' + bool_dict[settings['autoAdd']['status']][1]
+        res += '\n├ 自動進群 : ' + bool_dict[settings['autoJoin']['status']][1]
+        res += '\n├ 自動回覆 : ' + bool_dict[settings['autoRespond']['status']][1]
+        res += '\n├ 自動回覆標註 : ' + bool_dict[settings['autoRespondMention']['status']][1]
+        res += '\n├ 自動已讀 : ' + bool_dict[settings['autoRead']][1]
+        res += '\n├ 設定Key : ' + bool_dict[settings['setKey']['status']][1]
+        res += '\n├ 模仿 : ' + bool_dict[settings['mimic']['status']][1]
+        res += '\n├ 進群通知 : ' + bool_dict[settings['greet']['join']['status']][1]
+        res += '\n├ 退群通知 : ' + bool_dict[settings['greet']['leave']['status']][1]
+        res += '\n├ 友資鑑定 : ' + bool_dict[settings['checkContact']][1]
+        res += '\n├ 文章預覽 : ' + bool_dict[settings['checkPost']][1]
+        res += '\n├ 貼圖鑑定 : ' + bool_dict[settings['checkSticker']][1]
+        res += '\n╰───「 只有這些😅 」'
         line.sendMessage(to, parsingRes(res))
     elif cmd == 'abort':
         aborted = False
@@ -309,7 +309,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         res += '\n│ • {key}Error Logs'
         res += '\n│ • {key}Error Reset'
         res += '\n│ • {key}Error Detail <errid>'
-        res += '\n╰───「 Aditmadzs 」'
+        res += '\n╰───「 Yinmo 」'
         if cmd == 'error':
             line.sendMessage(to, parsingRes(res).format_map(SafeDict(key=setKey.title())))
         elif cond[0].lower() == 'logs':
@@ -330,7 +330,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                     no += 1
                     res += '\n│ %i. %s' % (no, error)
                     if error == errors[-1]:
-                        res += '\n╰───「 Aditmadzs 」'
+                        res += '\n╰───「 Yinmo 」'
                 if res:
                     if res.startswith('\n'): res = res[1:]
                     line.sendMessage(to, res)
@@ -363,7 +363,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         res += '\n│ • Setkey'
         res += '\n│ • Setkey <on/off>'
         res += '\n│ • Setkey <key>'
-        res += '\n╰───「 Aditmadzs 」'
+        res += '\n╰───「 Yinmo 」'
         if txt == 'setkey':
             line.sendMessage(to, parsingRes(res))
         elif texttl == 'on':
@@ -385,7 +385,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         textt = removeCmd(text, setKey)
         texttl = textt.lower()
         cond = textt.split(' ')
-        res = '╭───「 Auto Add 」'
+        res = '╭───「 自動加友 」'
         res += '\n├ Status : ' + bool_dict[settings['autoAdd']['status']][1]
         res += '\n├ Reply : ' + bool_dict[settings['autoAdd']['reply']][0]
         res += '\n├ Reply Message : ' + settings['autoAdd']['message']
@@ -394,7 +394,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         res += '\n│ • {key}AutoAdd <on/off>'
         res += '\n│ • {key}AutoAdd Reply <on/off>'
         res += '\n│ • {key}AutoAdd <message>'
-        res += '\n╰───「 Aditmadzs 」'
+        res += '\n╰───「 Yinmo 」'
         if cmd == 'autoadd':
             line.sendMessage(to, parsingRes(res).format_map(SafeDict(key=setKey.title())))
         elif texttl == 'on':
@@ -433,7 +433,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         textt = removeCmd(text, setKey)
         texttl = textt.lower()
         cond = textt.split(' ')
-        res = '╭───「 Auto Join 」'
+        res = '╭───「 自動進群 」'
         res += '\n├ Status : ' + bool_dict[settings['autoJoin']['status']][1]
         res += '\n├ Reply : ' + bool_dict[settings['autoJoin']['reply']][0]
         res += '\n├ Reply Message : ' + settings['autoJoin']['message']
@@ -443,7 +443,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         res += '\n│ • {key}AutoJoin Ticket <on/off>'
         res += '\n│ • {key}AutoJoin Reply <on/off>'
         res += '\n│ • {key}AutoJoin <message>'
-        res += '\n╰───「 Aditmadzs 」'
+        res += '\n╰───「 Yinmo 」'
         if cmd == 'autojoin':
             line.sendMessage(to, parsingRes(res).format_map(SafeDict(key=setKey.title())))
         elif texttl == 'on':
@@ -498,14 +498,14 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
     elif cmd.startswith('autorespondmention'):
         textt = removeCmd(text, setKey)
         texttl = textt.lower()
-        res = '╭───「 Auto Respond 」'
+        res = '╭───「 自動回覆標註 」'
         res += '\n├ Status : ' + bool_dict[settings['autoRespondMention']['status']][1]
         res += '\n├ Reply Message : ' + settings['autoRespondMention']['message']
         res += '\n├ Usage : '
         res += '\n│ • {key}AutoRespondMention'
         res += '\n│ • {key}AutoRespondMention <on/off>'
         res += '\n│ • {key}AutoRespondMention <message>'
-        res += '\n╰───「 Aditmadzs 」'
+        res += '\n╰───「 Yinmo 」'
         if cmd == 'autorespondmention':
             line.sendMessage(to, parsingRes(res).format_map(SafeDict(key=setKey.title())))
         elif texttl == 'on':
@@ -526,7 +526,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
     elif cmd.startswith('autorespond'):
         textt = removeCmd(text, setKey)
         texttl = textt.lower()
-        res = '╭───「 Auto Respond 」'
+        res = '╭───「 自動回覆 」'
         res += '\n├ Status : ' + bool_dict[settings['autoRespond']['status']][1]
         res += '\n├ Reply Message : ' + settings['autoRespond']['message']
         res += '\n├ Usage : '
@@ -615,10 +615,10 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         textt = removeCmd(text, setKey)
         texttl = textt.lower()
         profile = line.getProfile()
-        res = '╭───「 My Profile 」'
+        res = '╭───「 我的資料 」'
         res += '\n├ MID : ' + profile.mid
-        res += '\n├ Display Name : ' + str(profile.displayName)
-        res += '\n├ Status Message : ' + str(profile.statusMessage)
+        res += '\n├ 姓名 : ' + str(profile.displayName)
+        res += '\n├ 各簽 : ' + str(profile.statusMessage)
         res += '\n├ Usage : '
         res += '\n│ • {key}MyProfile'
         res += '\n│ • {key}MyProfile MID'
@@ -630,7 +630,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         res += '\n│ • {key}MyProfile Change Bio <bio>'
         res += '\n│ • {key}MyProfile Change Pict'
         res += '\n│ • {key}MyProfile Change Cover'
-        res += '\n╰───「 Aditmadzs 」'
+        res += '\n╰───「 Yinmo 」'
         if cmd == 'myprofile':
             if profile.pictureStatus:
                 line.sendImageWithURL(to, 'http://dl.profile.line-cdn.net/' + profile.pictureStatus)
@@ -640,20 +640,20 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         elif texttl == 'mid':
             line.sendMessage(to, '「 MID 」\n' + str(profile.mid))
         elif texttl == 'name':
-            line.sendMessage(to, '「 Display Name 」\n' + str(profile.displayName))
+            line.sendMessage(to, '「 姓名 」\n' + str(profile.displayName))
         elif texttl == 'bio':
-            line.sendMessage(to, '「 Status Message 」\n' + str(profile.statusMessage))
-        elif texttl == 'pict':
+            line.sendMessage(to, '「 各簽 」\n' + str(profile.statusMessage))
+        elif texttl == 'pic':
             if profile.pictureStatus:
                 path = 'http://dl.profile.line-cdn.net/' + profile.pictureStatus
                 line.sendImageWithURL(to, path)
-                line.sendMessage(to, '「 Picture Status 」\n' + path)
+                line.sendMessage(to, '「 頭貼 」\n' + path)
             else:
-                line.sendMessage(to, 'Failed display picture status, user doesn\'t have a picture status')
+                line.sendMessage(to, '此人沒有頭貼')
         elif texttl == 'cover':
             cover = line.getProfileCoverURL(profile.mid)
             line.sendImageWithURL(to, str(cover))
-            line.sendMessage(to, '「 Cover Picture 」\n' + str(cover))
+            line.sendMessage(to, '「 封面 」\n' + str(cover))
         elif texttl.startswith('change '):
             texts = textt[7:]
             textsl = texts.lower()
@@ -662,7 +662,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                 if len(name) <= 20:
                     profile.displayName = name
                     line.updateProfile(profile)
-                    line.sendMessage(to, 'Success change display name, changed to `%s`' % name)
+                    line.sendMessage(to, '成功更改名字, 更改為 `%s`' % name)
                 else:
                     line.sendMessage(to, 'Failed change display name, the length of the name cannot be more than 20')
             elif textsl.startswith('bio '):
@@ -673,7 +673,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                     line.sendMessage(to, 'Success change status message, changed to `%s`' % bio)
                 else:
                     line.sendMessage(to, 'Failed change status message, the length of the bio cannot be more than 500')
-            elif textsl == 'pict':
+            elif textsl == 'pic':
                 settings['changePictureProfile'] = True
                 line.sendMessage(to, 'Please send the image to set in picture profile, type `{key}Abort` if want cancel it.\nFYI: Downloading images will fail if too long upload the image'.format(key=setKey.title()))
             elif textsl == 'cover':
@@ -687,10 +687,10 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         textt = removeCmd(text, setKey)
         texttl = textt.lower()
         profile = line.getContact(to) if msg.toType == 0 else None
-        res = '╭───「 My Profile 」'
+        res = '╭───「 我的資料 」'
         if profile:
             res += '\n├ MID : ' + profile.mid
-            res += '\n├ Display Name : ' + str(profile.displayName)
+            res += '\n├ 姓名 : ' + str(profile.displayName)
             if profile.displayNameOverridden: res += '\n├ Display Name Overridden : ' + str(profile.displayNameOverridden)
             res += '\n├ Status Message : ' + str(profile.statusMessage)
         res += '\n├ Usage : '
@@ -723,7 +723,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         elif texttl == 'bio':
             if msg.toType != 0: return line.sendMessage(to, 'Failed display mid user, use this command only in personal chat')
             line.sendMessage(to, '「 Status Message 」\n' + str(profile.statusMessage))
-        elif texttl == 'pict':
+        elif texttl == 'pic':
             if msg.toType != 0: return line.sendMessage(to, 'Failed display mid user, use this command only in personal chat')
             if profile.pictureStatus:
                 path = 'http://dl.profile.line-cdn.net/' + profile.pictureStatus
@@ -807,7 +807,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                     line.sendMessage(to, parsingRes(res))
                 else:
                     line.sendMessage(to, 'Failed steal status message, no one user mentioned')
-            elif textsl.startswith('pict '):
+            elif textsl.startswith('pic '):
                 res = '╭───「 Picture Status 」'
                 no = 0
                 if 'MENTION' in msg.contentMetadata.keys():
@@ -830,7 +830,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                             res += '\n│ %i. %s' % (no, path)
                         else:
                             res += '\n│ %i. Not Found' % no
-                    res += '\n╰───「 Hello World 」'
+                    res += '\n╰───「 Yinmo 」'
                     line.sendMessage(to, parsingRes(res))
                 else:
                     line.sendMessage(to, 'Failed steal picture status, no one user mentioned')
@@ -1206,7 +1206,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         cids.sort()
         cnames = []
         ress = []
-        res = '╭───「 Block List 」'
+        res = '╭───「 封鎖名單 」'
         res += '\n├ List:'
         if cids:
             contacts = []
@@ -1248,7 +1248,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         res += '\n│ • {key}BlockList Info <num/name>'
         res += '\n│ • {key}BlockList Add <mention>'
         res += '\n│ • {key}BlockList Del <mention/num/name/all>'
-        res += '\n╰───「 Aditmadzs 」'
+        res += '\n╰───「 Yinmo 」'
         ress.append(res)
         if cmd == 'blocklist':
             for res in ress:
@@ -1312,7 +1312,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                     res += '\n│ %i. %s' % (no, name)
                     added.append(mid)
                 if no == 0: res += '\n│ Nothing'
-                res += '\n╰───「 Aditmadzs 」'
+                res += '\n╰───「 Yinmo 」'
                 line.sendMessage(to, res)
             else:
                 line.sendMessage(to, 'Failed block contact, no one user mentioned')
@@ -1320,7 +1320,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
             texts = textt[4:].split(', ')
             if not cids:
                 return line.sendMessage(to, 'Failed unblock contact, nothing user in list')
-            res = '╭───「 Block List 」'
+            res = '╭───「 封鎖名單 」'
             res += '\n├ Status : Del Block'
             res += '\n├ Deleted :'
             no = 0
@@ -1385,7 +1385,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
                         deleted.append(contact.mid)
                         time.sleep(0.8)
             if no == 0: res += '\n│ Nothing'
-            res += '\n╰───「 Aditmadzs 」'
+            res += '\n╰───「 Yinmo 」'
             line.sendMessage(to, res)
         else:
             for res in ress:
@@ -1422,7 +1422,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
             ticket = 'https://line.me/R/ti/g/' + str(line.reissueGroupTicket(group.id))
         created = time.strftime('%d-%m-%Y %H:%M:%S', time.localtime(int(group.createdTime) / 1000))
         path = 'http://dl.profile.line-cdn.net/' + group.pictureStatus
-        res = '╭───「 Group Info 」'
+        res = '╭───「 群組資訊 」'
         res += '\n├ ID : ' + group.id
         res += '\n├ Name : ' + group.name
         res += '\n├ Creator : ' + gcreator
@@ -1442,7 +1442,7 @@ def executeCmd(msg, text, txt, cmd, msg_id, receiver, sender, to, setKey):
         gids = line.getGroupIdsJoined()
         gnames = []
         ress = []
-        res = '╭───「 Group List 」'
+        res = '╭───「 群組列表 」'
         res += '\n├ List:'
         if gids:
             groups = line.getGroups(gids)
