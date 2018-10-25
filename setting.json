@@ -13,11 +13,11 @@
     "autoRead": false,
     "autoRespond": {
         "status": false,
-        "message": "欸欸 @!, 標我有事?(此為自動回覆訊息)"
+        "message": "欸欸 @!, 私我如果沒回\n請多私幾次(´･ω･`)"
     },
     "autoRespondMention": {
         "status": false,
-        "message": "欸欸 @!, 標我如果沒回 請私我"
+        "message": "欸欸 @!, 標我有事?(此為自動回覆訊息)"
     },
     "changeGroupPicture": [],
     "changePictureProfile": false,
