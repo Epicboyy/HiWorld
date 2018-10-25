@@ -1,23 +1,23 @@
 {
     "autoAdd": {
         "status": false,
-        "message": "Hello @!, thanks for add me as your friend\nIf you want to use selfbot subs this channel https://www.youtube.com/channel/UCXRsSsDqgG8OhQRumopLkuQ",
+        "message": "安安 @!, 加我好友就要密我啊\n騷擾一律封鎖處置!",
         "reply": true
     },
     "autoJoin": {
         "status": false,
-        "message": "Hello @!, thanks for invite me to this group\nSelfbot by Hello World",
+        "message": "親愛的 @!, 感謝您邀請我群組(´ε｀*)",
         "reply": true,
         "ticket": false
     },
     "autoRead": false,
     "autoRespond": {
         "status": false,
-        "message": "Hello @!, thanks for your message this is auto respond\nSelfbot by Hello World"
+        "message": "欸欸 @!, 標我有事?(此為自動回覆訊息)"
     },
     "autoRespondMention": {
         "status": false,
-        "message": "Hello @!, thanks for mentioned me, if your message is very important please leave it on personal chat\nIf you want to use selfbot subs this channel https://www.youtube.com/channel/UCXRsSsDqgG8OhQRumopLkuQ"
+        "message": "欸欸 @!, 標我如果沒回 請私我"
     },
     "changeGroupPicture": [],
     "changePictureProfile": false,
@@ -25,11 +25,11 @@
     "checkContact": false,
     "checkPost": false,
     "checkSticker": false,
-    "defaultReplyReader" : "Hello @!, come here join to chat\nIf you want to use selfbot subs this channel https://www.youtube.com/channel/UCXRsSsDqgG8OhQRumopLkuQ",
+    "defaultReplyReader" : "安安 @!, 乃聊天嘛( ﾟ▽ﾟ)/",
     "greet": {
         "join": {
             "status": false,
-            "message": "Hello @!, welcome to group {name}\nIf you want to use selfbot subs this channel https://www.youtube.com/channel/UCXRsSsDqgG8OhQRumopLkuQ"
+            "message": "Hello @!, welcome to group {name}"
         },
         "leave": {
             "status": false,
