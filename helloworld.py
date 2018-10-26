@@ -188,7 +188,7 @@ def mentionMembers(to, mids=[]):
     if myMid in mids: mids.remove(myMid)
     parsed_len = len(mids)//20+1
     result = '╭───「 這些都是傻B 」\n'
-    mention = '@Yinmo\n'
+    mention = '@zeroxyuuki\n'
     no = 0
     for point in range(parsed_len):
         mentionees = []
